@@ -1,0 +1,7 @@
+Tinker:
+
+// Add 50 threads
+$threads = factory('App\Thread', 50)->create();
+
+// Add 10 reply for each thread
+$threads->each(function ($thread) { factory('App\Reply', 10)->create(['thread_id' => $thread->id]); });
